@@ -7,8 +7,21 @@ class BMICalculator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color THEME_BACKGROUND_COLOR = Colors.red;
+    final Color THEME_FOREGROUND_COLOR = Colors.white;
     return MaterialApp(
       home: InputPage(),
+      theme: ThemeData(
+          primaryColor: Colors.red,
+          appBarTheme: AppBarTheme(
+            backgroundColor: THEME_BACKGROUND_COLOR,
+            centerTitle: true,
+            foregroundColor: THEME_FOREGROUND_COLOR,
+          ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: THEME_BACKGROUND_COLOR,
+            foregroundColor: THEME_FOREGROUND_COLOR,
+          )),
     );
   }
 }
