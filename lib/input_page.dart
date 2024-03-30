@@ -27,12 +27,19 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     myColor: cardBackgroundColor,
-                    cardChild: IconContent(),
+                    cardChild: IconContent(
+                      iconText: "MALE",
+                      fontAwesomeIcon: FontAwesomeIcons.mars,
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     myColor: cardBackgroundColor,
+                    cardChild: IconContent(
+                      iconText: "FEMALE",
+                      fontAwesomeIcon: FontAwesomeIcons.venus,
+                    ),
                   ),
                 )
               ],
@@ -71,35 +78,6 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class IconContent extends StatelessWidget {
-  const IconContent({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          FontAwesomeIcons.mars,
-          size: 80.0,
-          color: Colors.white,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          "MALE",
-          style: TextStyle(
-            fontSize: 18.00,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 class ReusableCard extends StatelessWidget {
   final Color myColor;
   final Widget? cardChild;
@@ -119,6 +97,37 @@ class ReusableCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
         color: myColor,
       ),
+    );
+  }
+}
+
+class IconContent extends StatelessWidget {
+  final String iconText;
+  final IconData fontAwesomeIcon;
+
+  const IconContent(
+      {super.key, required this.iconText, required this.fontAwesomeIcon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          fontAwesomeIcon,
+          size: 80.0,
+          color: Colors.white,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          iconText,
+          style: TextStyle(
+            fontSize: 18.00,
+          ),
+        ),
+      ],
     );
   }
 }
