@@ -27,6 +27,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     myColor: cardBackgroundColor,
+                    cardChild: IconContent(),
                   ),
                 ),
                 Expanded(
@@ -66,6 +67,35 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class IconContent extends StatelessWidget {
+  const IconContent({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          FontAwesomeIcons.mars,
+          size: 80.0,
+          color: Colors.white,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          "MALE",
+          style: TextStyle(
+            fontSize: 18.00,
+          ),
+        ),
+      ],
     );
   }
 }
