@@ -14,7 +14,7 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
       ),
-      body: Column(
+      body: const Column(
         children: [
           Expanded(
             child: Row(
@@ -51,9 +51,9 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+      floatingActionButton: const FloatingActionButton(
         onPressed: null,
+        child: Icon(Icons.add),
       ),
     );
   }
