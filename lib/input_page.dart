@@ -176,14 +176,23 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
-  const RoundIconButton({super.key});
+  const RoundIconButton({super.key, this.icon});
+
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
-    return const RawMaterialButton(
+    return RawMaterialButton(
       onPressed: null,
       shape: CircleBorder(),
+      elevation: 6.0,
+      disabledElevation: 6.0,
       fillColor: kButtonsBackgroundColor,
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      child: Icon(icon),
     );
   }
 }
