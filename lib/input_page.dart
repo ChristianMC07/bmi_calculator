@@ -35,8 +35,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     myColor: selectedGender == Gender.male
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     cardChild: IconContent(
                       iconText: "MALE",
                       fontAwesomeIcon: FontAwesomeIcons.mars,
@@ -51,8 +51,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     myColor: selectedGender == Gender.female
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     cardChild: IconContent(
                       iconText: "FEMALE",
                       fontAwesomeIcon: FontAwesomeIcons.venus,
@@ -64,7 +64,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              myColor: activeCardColor,
+              myColor: kActiveCardColor,
               cardChild: Column(
                 children: [
                   Text("HEIGHT"),
@@ -77,22 +77,22 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCard(
-                    myColor: activeCardColor,
+                    myColor: kActiveCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    myColor: activeCardColor,
+                    myColor: kActiveCardColor,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
           ),
         ],
       ),
