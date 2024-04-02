@@ -7,9 +7,6 @@ import 'constants.dart';
 
 enum Gender { male, female }
 
-int height = 180;
-int weight = 60;
-
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
 
@@ -19,6 +16,8 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
+  int height = 180;
+  int weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -139,12 +138,22 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
+                              customFunction: () => {
+                                setState(() {
+                                  weight--;
+                                }),
+                              },
                             ),
                             SizedBox(
                               width: 10.0,
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
+                              customFunction: () => {
+                                setState(() {
+                                  weight++;
+                                }),
+                              },
                             ),
                           ],
                         )
@@ -176,12 +185,12 @@ class RoundIconButton extends StatelessWidget {
   const RoundIconButton({super.key, this.icon, this.customFunction});
 
   final IconData? icon;
-  final Function? customFunction;
+  final void Function()? customFunction;
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () => customFunction,
+      onPressed: customFunction,
       shape: CircleBorder(),
       elevation: 6.0,
       disabledElevation: 6.0,
