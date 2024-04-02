@@ -72,6 +72,14 @@ class _InputPageState extends State<InputPage> {
                     "HEIGHT",
                     style: kLabelTextStyle,
                   ),
+                  Row(
+                    children: [
+                      Text(
+                        '180',
+                        style: kNumberTextStyle,
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
