@@ -7,6 +7,7 @@ import 'constants.dart';
 enum Gender { male, female }
 
 int height = 180;
+int weight = 60;
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -121,6 +122,19 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     myColor: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
