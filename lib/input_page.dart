@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
@@ -133,6 +134,30 @@ class _InputPageState extends State<InputPage> {
                           weight.toString(),
                           style: kNumberTextStyle,
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FloatingActionButton(
+                              onPressed: null,
+                              backgroundColor: kButtonsBackgroundColor,
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            FloatingActionButton(
+                              onPressed: null,
+                              backgroundColor: kButtonsBackgroundColor,
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
