@@ -75,6 +75,8 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    textBaseline: TextBaseline.alphabetic,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
                     children: [
                       Text(
                         '180',
