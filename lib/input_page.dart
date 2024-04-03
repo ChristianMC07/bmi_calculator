@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'bottom_button.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
 import 'constants.dart';
@@ -218,34 +219,6 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class BottomButton extends StatelessWidget {
-  final void Function() onTap;
-  final String buttonTitle;
-
-  const BottomButton(
-      {super.key, required this.onTap, required this.buttonTitle});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Container(
-        child: Center(
-          child: Text(
-            buttonTitle,
-            style: kLargeButtonTextStyle,
-          ),
-        ),
-        color: kBottomContainerColor,
-        margin: EdgeInsets.only(top: 10.0),
-        width: double.infinity,
-        height: kBottomContainerHeight,
-        padding: EdgeInsets.only(bottom: 2.0),
-      ),
-      onTap: onTap,
     );
   }
 }
